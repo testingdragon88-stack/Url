@@ -16,7 +16,7 @@ function sendRequest() {
 
   fetch(fullUrl)
     .then(() => {
-      statusText.textContent = "Sent: ";
+      statusText.textContent = "Sent";
     })
     .catch(() => {
       statusText.textContent = "Error sending request";
