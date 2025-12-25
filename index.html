@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple GET Request Sender</title>
+</head>
+<body>
+
+  <h2>Send Text via GET Request</h2>
+
+  <input type="text" id="userInput" placeholder="Enter text" />
+  <button onclick="sendRequest()">Send</button>
+
+  <p id="status"></p>
+
+  <script>
+    function sendRequest() {
+      const baseString = "https://example.com/api?data=";
+      const input = document.getElementById("userInput").value;
+
+      // Encode input to be URL-safe
+      const fullUrl = baseString + encodeURIComponent(input);
+
+      // Send GET request
+      fetch(fullUrl)
+        .then(response => {
+          document.getElementById("status").textContent =
